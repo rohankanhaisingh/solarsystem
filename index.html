@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml%22%3E">
+<head>
+    <meta charset="utf-8" />
+    <title>Solar System</title>
+    <style> [class~=textblock]{width:100%;}[class~=textblock]{height:100%;}[class~=textblock]{position:fixed;}[class~=textblock]{top:0;}[class~=textblock]{left:0;}[class~=textblock]{z-index:100000;}body{display:contents;}canvas{display:block;} [class~=fps]{width:60pt;}[class~=fps]{height:1.25pc;}[class~=fps]{position:fixed;}[class~=fps]{top:.104166667in;}[class~=fps]{left:10px;}[class~=fps]{font-family:monospace;}[class~=fps]{color:lime;}[class~=fps]{z-index:9999;}[class~=fps]{font-size:12px;}[class~=fps]{user-select:none;}[class~=fps]{pointer-events:none;}</style>
+</head>
+<body>
+    <div class="fps">60fps</div>
+    <div class="textblock">
+        <p>This project requires a webserver.</p>
+        <ul>
+            <li><a href="https://www.apachefriends.org/index.html">https://www.apachefriends.org/index.html</a></li>
+            <li><a href="https://www.wampserver.com/en/">https://www.wampserver.com/en/</a></li>
+            <li><a href="https://azure.microsoft.com/">https://azure.microsoft.com/</a></li>
+            <li>Tutorial on how to make your own webserver using NodeJS. <a href="https://www.w3schools.com/nodejs/nodejs_http.asp">(https://www.w3schools.com/nodejs/nodejs_http.asp)</a></li>
+        </ul>
+    </div>
+    <canvas class="canvas">
+        Your browser doesn't support the canvas.
+    </canvas>
+
+    <script src="g.min.js">/* g.js by Rohan Kanhaisingh */</script><script>if (typeof g !== 'undefined') { if (typeof g.Selector !== 'undefined') { window.sl = g.Selector; } if (typeof g.CreateElement !== 'undefined') { window.ce = g.CreateElement}}</script><script src="index.js" type="module"></script><script>const times = []; let fps = void 0; function refreshLoop() { window.requestAnimationFrame(() => { const e = performance.now(); for (; times.length > 0 && times[0] <= e - 1e3;)times.shift(); times.push(e), fps = times.length, refreshLoop(), sl(".fps").innerText = `${fps} FPS` }) } refreshLoop();</script>
+</body>
+</html>
+
+<!--
+    This is a epic 2D solarsystem made by only Javascript. 
+    
+    
+    I made the classes in separate files to make it clear. They are being used as modules so I can link them all to one file (index.js).
+    There are some bugs like the rotations of the planets but just dont mind them. I'll try to fix them
+
+    I hope you like this project.
+
+    2D Solar System by R.K, CEO Corona, Microsoft Visual Studio.
+    
+-->
